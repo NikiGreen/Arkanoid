@@ -3,6 +3,8 @@ n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(7): war
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(28): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(64): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Создание кода
-  All 67 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 67 functions ( 1.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   Arkanoid.vcxproj -> N:\Nikita\Programming\Repositories\Arkanoid\Arkanoid\x64\Release\Arkanoid.exe
