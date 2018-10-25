@@ -13,7 +13,7 @@ int main()
 	t1.loadFromFile("images/block01.png");
 	t2.loadFromFile("images/background2.jpg");
 	t3.loadFromFile("images/ball.png");
-	t4.loadFromFile("images/paddle.png");
+	t4.loadFromFile("images/paddle2.png");
 
 	Sprite sBackground(t2), sBall(t3), sPaddle(t4);
 	sPaddle.setPosition(300, 440);
