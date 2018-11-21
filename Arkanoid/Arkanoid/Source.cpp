@@ -119,9 +119,14 @@ int main()
 			}
 		//}
 		if (x<0 || x>520)  dx = -dx;//Контроль стенок
-		if (y < 0 || y>450) {
-			Lives=Lives-1;
-			dy = -dy; }//
+		if (y < 0 /*|| y>450*/) {
+			
+			dy = -dy;
+		}
+		else if (y>450) {
+			Lives--;
+			dy = -dy;
+			}
 
 		if (Keyboard::isKeyPressed(Keyboard::Right)) sPaddle.move(6, 0);//Реагирование на кнопки клавиатуры
 		if (Keyboard::isKeyPressed(Keyboard::Left)) sPaddle.move(-6, 0);
