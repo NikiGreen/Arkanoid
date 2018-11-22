@@ -19,19 +19,19 @@ bool new1 = false;
 	menuTexture2.loadFromFile("images/Button_About.png");
 	menuTexture3.loadFromFile("images/Button_Exit.png");
 	aboutTexture.loadFromFile("images/ABOUT2.png");
-	menuBackground.loadFromFile("images/background.jpg");
+	menuBackground.loadFromFile("images/background7.jpg");
 	Sprite menuTitle(menuTitleTexture), menu0(menuTexture0), menu1(menuTexture1), menu2(menuTexture2), menu3(menuTexture3), about(aboutTexture), menuBg(menuBackground);
 	bool isMenu = 1;
 	int menuNum = 0;
 
 	menuTitle.setPosition(-40, -150);
 	if (cout != 0) {
-		menu0.setPosition(/*100*/150, /*30*/130);
+		menu0.setPosition(/*100*/140/*135*/, /*30*//*130*//*160*/180);
 	}else
 		menu0.setPosition(/*100*/1000, /*30*/1000);
-	menu1.setPosition(/*100*/150, /*30*/190);
-	menu2.setPosition(150, /*90*/250);
-	menu3.setPosition(150, /*150*/310);
+	menu1.setPosition(/*100*/140/*135*/, /*30*//*190*//*220*/240);
+	menu2.setPosition(140/*135*/, /*90*//*250*//*280*/300);
+	menu3.setPosition(140/*135*/, /*150*//*310*//*340*/360);
 	menuBg.setPosition(0, 0);
 
 
@@ -45,11 +45,11 @@ bool new1 = false;
 		menuNum = 0;
 		window.clear(Color(129, 181, 221));
 
-		if (IntRect(/*100*/150, /*30*/130, 300, 50).contains(Mouse::getPosition(window))) { menu0.setColor(Color::Blue); menuNum = 0; }
+		if (IntRect(/*100*/150, /*30*//*130*/160, 300, 50).contains(Mouse::getPosition(window))) { menu0.setColor(Color::Blue); menuNum = 0; }
 
-		if (IntRect(/*100*/150, /*30*/190, 300, 50).contains(Mouse::getPosition(window))) { menu1.setColor(Color::Blue); menuNum = 1; }
-		if (IntRect(/*100*/150, /*90*/250, 300, 50).contains(Mouse::getPosition(window))) { menu2.setColor(Color::Blue); menuNum = 2; }
-		if (IntRect(/*100*/150, /*150*/310, 300, 50).contains(Mouse::getPosition(window))) { menu3.setColor(Color::Blue); menuNum = 3; }
+		if (IntRect(/*100*/150, /*30*//*190*/220, 300, 50).contains(Mouse::getPosition(window))) { menu1.setColor(Color::Blue); menuNum = 1; }
+		if (IntRect(/*100*/150, /*90*//*250*/280, 300, 50).contains(Mouse::getPosition(window))) { menu2.setColor(Color::Blue); menuNum = 2; }
+		if (IntRect(/*100*/150, /*150*//*310*/340, 300, 50).contains(Mouse::getPosition(window))) { menu3.setColor(Color::Blue); menuNum = 3; }
 
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
