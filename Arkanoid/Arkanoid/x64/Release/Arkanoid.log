@@ -3,8 +3,8 @@ n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(15): wa
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(61): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(195): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Создание кода
-  3 of 100 functions ( 3.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  4 of 100 functions ( 4.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   Arkanoid.vcxproj -> N:\Nikita\Programming\Repositories\Arkanoid\Arkanoid\x64\Release\Arkanoid.exe
