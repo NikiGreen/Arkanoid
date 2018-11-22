@@ -1,5 +1,7 @@
-﻿  Source.cpp
+﻿  MainMenu.cpp
+  Source.cpp
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(55): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(90): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(134): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-  Arkanoid.vcxproj -> N:\Nikita\Programming\Repositories\Arkanoid\Arkanoid\x64\Debug\Arkanoid.exe
+sfml-window.lib(sfml-window-2.dll) : fatal error LNK1112: тип компьютера модуля "x64" противоречит типу целевого компьютера "x86"
+N:\Programs\Programming\Visual Studio 2017\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(673,5): error MSB6006: "link.exe" завершилась с кодом 1112.
