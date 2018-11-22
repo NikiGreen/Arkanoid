@@ -1,5 +1,7 @@
-﻿  Source.cpp
-n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(55): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(90): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(134): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+﻿  MainMenu.cpp
+  Source.cpp
+n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(62): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(187): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  Создание кода...
   Arkanoid.vcxproj -> N:\Nikita\Programming\Repositories\Arkanoid\Arkanoid\x64\Debug\Arkanoid.exe
