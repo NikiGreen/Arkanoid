@@ -41,7 +41,10 @@ void menu(RenderWindow & window) {
 
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			if (menuNum == 1) isMenu = false;//если нажали первую кнопку, то выходим из меню 
+			if (menuNum == 1) {
+				isMenu = false;
+				
+			}//если нажали первую кнопку, то выходим из меню 
 			if (menuNum == 2) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
 			if (menuNum == 3) { window.close(); isMenu = false; }
 
@@ -59,48 +62,75 @@ void menu(RenderWindow & window) {
 }
 
 
-void MainAlgorythm(RenderWindow & app,Text text,int Lives,int x,int dx,int y,int dy,Sprite block[],int n) {
-	//text.setString("Lives:" + std::to_string(Lives));//задает строку тексту
-	//Event e;
-	//контроль столкновения блоков и шара{
-	//x += dx;
-	//for (int i = 0; i<n; i++)
-	//	if (FloatRect(x + 3, y + 3, 6, 6).intersects(block[i].getGlobalBounds()))
-	//	{
-	//		block[i].setPosition(-100, 0); dx = -dx;
-	//	}
-
-	//y += dy;
-	//for (int i = 0; i<n; i++)
-	//	if (FloatRect(x + 3, y + 3, 6, 6).intersects(block[i].getGlobalBounds()))
-	//	{
-	//		block[i].setPosition(-100, 0); dy = -dy;
-	//	}
-	//}
-	//if (x<0 || x>520)  dx = -dx;//Контроль стенок
-	//if (y < 0 /*|| y>450*/) {
-
-	//	dy = -dy;
-	//}
-	//else if (y>450) {//Сделать поражение
-	//	Lives--;
-	//	dy = -dy;
-	//}
-}
-
+//void LosePanel(RenderWindow & window1) {
+//	Font first_font1;//шрифт 
+//	Texture menuTitleTexture1, menuTexture11, menuBackground1;
+//	menuTitleTexture1.loadFromFile("images/YouWon.png");
+//	menuTexture11.loadFromFile("images/InMenu.png");
+//	menuBackground1.loadFromFile("images/background4.jpg");
+//	Sprite menuTitle1(menuTitleTexture1), menu11(menuTexture11), menuBg1(menuBackground1);
+//	
+//	bool isMenu1;
+//
+//		isMenu1 = 1;
+//	int menuNum1 = 0;
+//
+//	menuTitle1.setPosition(-10, -130);
+//
+//	menu11.setPosition(/*100*/150, /*30*/190);
+//
+//	menuBg1.setPosition(0, 0);
+//
+//
+//	//////////////////////////////МЕНЮ///////////////////
+//	while (isMenu1)
+//	{
+//
+//		menu11.setColor(Color::White);
+//		menuNum1 = 0;
+//		window1.clear(Color(129, 181, 221));
+//
+//		if (IntRect(/*100*/150, /*30*/190, 300, 50).contains(Mouse::getPosition(window1))) { menu11.setColor(Color::Blue); menuNum1 = 1; }
+//
+//		if (Mouse::isButtonPressed(Mouse::Left))
+//		{
+//			if (menuNum1 == 1) {
+//				isMenu1 = false;
+//				id = true;
+//				/*isMenu = false;*/
+//			}
+//			
+//			//если нажали первую кнопку, то выходим из меню 
+//		}
+//			window1.draw(menuBg1);
+//			window1.draw(menuTitle1);
+//			window1.draw(menu11);
+//
+//			window1.display();
+//		
+//		////////////////////////////////////////////////////
+//	}
+//}
 
 
 int main()
 {
+	bool id = false;
 	srand(time(0));
-	int Lives = 5, Score = 0;
+	int Lives = 5, Score = 0; int ifi = 0;
 	RenderWindow app(VideoMode(520, 450), "Arkanoid ver 1.1");
 	menu(app);
 	
 	app.setFramerateLimit(60);
 
+
+
+	Texture LoseTexture, WinTexture;
+	LoseTexture.loadFromFile("images/YouLost.png");
+	WinTexture.loadFromFile("images/YouWon.png");
+	Sprite Lose(LoseTexture), Win(WinTexture);
 	
-	
+
 	Font font;//шрифт 
 	font.loadFromFile("images/12583.otf");
 	Text text_lives,text_score;//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
@@ -142,17 +172,60 @@ int main()
 
 	while (app.isOpen())//При открытии окна
 	{
-		if (Lives < 4 ) {//исправить 4 на 1   поражение!!!
+		Sprite panel(WinTexture);
+
+		/*if (id == true) {*/
+			/* panel.setTexture(WinTexture);*/
+		/*}
+		else
+			 panel.setTexture(LoseTexture);*/
+
+
+		if (Lives < 5 ) {//исправить 4 на 1   поражение!!!
+			id = false;
+			if(id==false)
+			{
+				app.clear();
+				app.draw(sBackground);
+				app.draw(Lose);
+				app.display(); 
+				while (!Keyboard::isKeyPressed(Keyboard::Escape));
+			}
+			
 			menu(app);
 			Lives = 5;
+			
 		}
 		else if (Score>=100) {//Победа!!!
+			id = true;
+			if (id == true)
+			{
+				app.clear();
+				app.draw(sBackground);
+				app.draw(Win);
+				app.display();
+				while (!Keyboard::isKeyPressed(Keyboard::Escape));
+			}
 			menu(app);
+			
 		}
-		else if (Keyboard::isKeyPressed(Keyboard::Escape)) {//Выход!!!
+		else if (Keyboard::isKeyPressed(Keyboard::Escape)) //Выход!!!
+		{
+			/*id = false;
+			if (id == false)
+			{
+				app.clear();
+				app.draw(sBackground);
+				app.draw(Lose);
+				app.display();
+				while (!Keyboard::isKeyPressed(Keyboard::Escape));
+			}*/
 			menu(app);
+			
 		}
-
+								
+		
+		
 
 		text_lives.setString("Lives:" + std::to_string(Lives));//задает строку тексту
 		text_score.setString("Score:" + std::to_string(Score));
