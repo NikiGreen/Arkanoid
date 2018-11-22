@@ -19,13 +19,10 @@ void Game() {
 
 	app.setFramerateLimit(60);
 
-
-
 	Texture LoseTexture, WinTexture;
 	LoseTexture.loadFromFile("images/YouLost.png");
 	WinTexture.loadFromFile("images/YouWon.png");
 	Sprite Lose(LoseTexture), Win(WinTexture);
-
 
 	Font font;//רנטפע 
 	font.loadFromFile("images/12583.otf");
@@ -111,7 +108,7 @@ void Game() {
 
 			menu(app);
 			Lives = 5;
-
+			Game();
 		}
 		else if (Score >= 100) {//ֿמבוהא!!!
 			id = true;
@@ -142,6 +139,7 @@ void Game() {
 				while (!Keyboard::isKeyPressed(Keyboard::Escape));
 			}
 			menu(app);
+			
 
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::Escape)) //ֲûץמה!!!
@@ -220,7 +218,7 @@ void AfterRunning() {
 
 int main()
 {
-	Game();
+	AfterRunning();
 
 	return 0;
 }

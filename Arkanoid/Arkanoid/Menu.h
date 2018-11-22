@@ -3,6 +3,7 @@
 #ifndef  _menu_H_
 #define _menu_H_
 #include"1.h"
+
 //#include <SFML/Graphics.hpp>
 //#include <time.h>
 //#include <iostream>
@@ -44,6 +45,7 @@
 		{
 			if (menuNum == 1) {
 				isMenu = false;
+				
 
 			}//если нажали первую кнопку, то выходим из меню 
 			if (menuNum == 2) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
