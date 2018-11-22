@@ -1,10 +1,9 @@
-﻿  Source.cpp
+﻿  MainMenu.cpp
+  Source.cpp
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(62): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(187): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Создание кода
-  1 of 100 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  All 100 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Создание кода завершено
   Arkanoid.vcxproj -> N:\Nikita\Programming\Repositories\Arkanoid\Arkanoid\x64\Release\Arkanoid.exe

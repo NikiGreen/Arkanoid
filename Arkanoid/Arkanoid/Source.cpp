@@ -70,7 +70,7 @@
 		{
 			Sprite panel(WinTexture);
 
-			if (Lives < -100000) {//исправить 4 на 1   поражение!!!
+			if (Lives < 1) {//  поражение!!!
 				id = false;
 				if (id == false)
 				{

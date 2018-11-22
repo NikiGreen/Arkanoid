@@ -5,10 +5,8 @@
 #include"1.h"
 int cout = 0;
 bool new1 = false;
-//#include <SFML/Graphics.hpp>
-//#include <time.h>
-//#include <iostream>
-//using namespace sf;
+
+
  void menu(RenderWindow & window) {
 	 
 	Font first_font;//רנטפע 
