@@ -15,7 +15,7 @@ bool new1 = false;
 	Texture menuTitleTexture, menuTexture0, menuTexture1, menuTexture2, menuTexture3, aboutTexture, menuBackground;
 	menuTitleTexture.loadFromFile("images/Title3.png");
 	menuTexture0.loadFromFile("images/Button_Resume.png");
-	menuTexture1.loadFromFile("images/Button_PlayGame.png");
+	menuTexture1.loadFromFile("images/Button_NewGame.png");
 	menuTexture2.loadFromFile("images/Button_About.png");
 	menuTexture3.loadFromFile("images/Button_Exit.png");
 	aboutTexture.loadFromFile("images/ABOUT2.png");
@@ -25,7 +25,10 @@ bool new1 = false;
 	int menuNum = 0;
 
 	menuTitle.setPosition(-40, -150);
-	menu0.setPosition(/*100*/150, /*30*/130);
+	if (cout != 0) {
+		menu0.setPosition(/*100*/150, /*30*/130);
+	}else
+		menu0.setPosition(/*100*/1000, /*30*/1000);
 	menu1.setPosition(/*100*/150, /*30*/190);
 	menu2.setPosition(150, /*90*/250);
 	menu3.setPosition(150, /*150*/310);
@@ -52,6 +55,7 @@ bool new1 = false;
 		{
 			if (menuNum == 0){
 				if (cout != 0) {
+					new1 = false;
 					isMenu = false;
 				}
 				
@@ -59,6 +63,9 @@ bool new1 = false;
 			}
 
 			if (menuNum == 1) {
+				if (cout != 0) {
+					new1 = true;					
+				}				
 				isMenu = false;
 				cout++;
 
