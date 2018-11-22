@@ -91,7 +91,7 @@ void MainAlgorythm(RenderWindow & app,Text text,int Lives,int x,int dx,int y,int
 int main()
 {
 	srand(time(0));
-	int Lives = 5, Scoure = 0;
+	int Lives = 5, Score = 0;
 	RenderWindow app(VideoMode(520, 450), "Arkanoid ver 1.1");
 	menu(app);
 	
@@ -101,12 +101,18 @@ int main()
 	
 	Font font;//шрифт 
 	font.loadFromFile("images/12583.otf");
-	Text text;//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
-	text.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
+	Text text_lives,text_score;//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
 
-	text.setPosition(5,5 );//задаем позицию текста, центр камеры
-	text.setCharacterSize(15);
-	text.setFont(font);
+	text_lives.setStyle(sf::Text::Bold | sf::Text::Underlined);//жирный и подчеркнутый текст. по умолчанию он "худой":)) и не подчеркнутый
+	text_score.setStyle(sf::Text::Bold | sf::Text::Underlined);
+
+	text_lives.setPosition(5,5 );//задаем позицию текста, центр камеры
+	text_lives.setCharacterSize(15);
+	text_lives.setFont(font);
+
+	text_score.setPosition(470, 5);//задаем позицию текста, центр камеры
+	text_score.setCharacterSize(15);
+	text_score.setFont(font);
 	//рисую этот текст
 
 	Texture sp1, sp2, sp3, sp4;
@@ -138,7 +144,7 @@ int main()
 			menu(app);
 			Lives = 5;
 		}
-		else if (Scoure>=100) {//Победа!!!
+		else if (Score>=100) {//Победа!!!
 			menu(app);
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::Escape)) {//Выход!!!
@@ -146,7 +152,8 @@ int main()
 		}
 
 
-		text.setString("Lives:" + std::to_string(Lives));//задает строку тексту
+		text_lives.setString("Lives:" + std::to_string(Lives));//задает строку тексту
+		text_score.setString("Score:" + std::to_string(Score));
 		Event e;
 		while (app.pollEvent(e))//Для ловли ивента
 		{
@@ -158,14 +165,14 @@ int main()
 		for (int i = 0; i<n; i++)
 			if (FloatRect(x + 3, y + 3, 6, 6).intersects(block[i].getGlobalBounds()))
 			{
-				block[i].setPosition(-100, 0); dx = -dx; Scoure++;
+				block[i].setPosition(-100, 0); dx = -dx; Score++;
 			}
 
 		y += dy;
 		for (int i = 0; i<n; i++)
 			if (FloatRect(x + 3, y + 3, 6, 6).intersects(block[i].getGlobalBounds()))
 			{
-				block[i].setPosition(-100, 0); dy = -dy; Scoure++;
+				block[i].setPosition(-100, 0); dy = -dy; Score++;
 			}
 		//}
 		if (x<0 || x>520)  dx = -dx;//Контроль стенок
@@ -178,8 +185,8 @@ int main()
 			dy = -dy;
 			}
 		
-		if (Keyboard::isKeyPressed(Keyboard::Right)) sPaddle.move(6, 0);//Реагирование на кнопки клавиатуры
-		if (Keyboard::isKeyPressed(Keyboard::Left)) sPaddle.move(-6, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Right)) sPaddle.move(/*6*/8, 0);//Реагирование на кнопки клавиатуры
+		if (Keyboard::isKeyPressed(Keyboard::Left)) sPaddle.move(/*-6*/-8, 0);
 
 		if (FloatRect(x, y, 12, 12).intersects(sPaddle.getGlobalBounds())) dy = -(rand() % 5 + 2);//реагирование шарика на платформу
 
@@ -188,7 +195,8 @@ int main()
 		app.clear();//отображение всех элементов
 		
 		app.draw(sBackground);
-		app.draw(text);
+		app.draw(text_lives);
+		app.draw(text_score);
 		app.draw(sBall);
 		app.draw(sPaddle);
 		

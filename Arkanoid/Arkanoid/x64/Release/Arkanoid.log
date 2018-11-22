@@ -1,7 +1,7 @@
 ﻿  Source.cpp
 n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(93): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(128): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(184): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(134): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+n:\nikita\programming\repositories\arkanoid\arkanoid\arkanoid\source.cpp(191): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Создание кода
   1 of 98 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
